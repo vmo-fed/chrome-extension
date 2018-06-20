@@ -1,0 +1,12 @@
+{
+  "name": "history",
+  "description": "customize history",
+  "version": "0.1",
+  "chrome_url_overrides": {
+    "history": "history.html"
+  },
+  "permissions": [
+    "history"
+  ],
+  "manifest_version": 2
+}

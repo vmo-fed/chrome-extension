@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="mustache.min.js"></script>
+</head>
+<body>
+    <div id="history"></div>
+    <script id="history-template" type="x-tmpl-mustache">
+    {{#historyList}}
+    <div class="history-item">{{title}}</div>
+    {{/historyList}}
+    </script>
+    <script src="main.js"></script>
+</body>
+</html>
