@@ -1,0 +1,13 @@
+{
+  "name": "Search 百度",
+  "version": "1.0",
+  "manifest_version": 2,
+  "omnibox": { "keyword" : "bai" },
+  "icons": {
+    "48": "search.png"
+  },
+  "background": {
+    "persistent": false,
+    "scripts": ["background.js"]
+  }
+}
