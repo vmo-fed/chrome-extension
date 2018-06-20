@@ -1,0 +1,16 @@
+{
+  "name": "Search Tab",
+  "description": "实现添加搜索引擎快捷键",
+  "version": "1.1",
+  "background": {
+    "persistent": false,
+    "scripts": ["background.js"]
+  },
+  "omnibox": {
+    "keyword": "test"
+  },
+  "manifest_version": 2,
+  "permissions": [
+    "http://www.google.com/"
+  ]
+}
