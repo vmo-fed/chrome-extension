@@ -1,0 +1,19 @@
+{
+  "name": "Hello Extensions",
+  "description" : "Base Level Extension",
+  "version": "1.0",
+  "manifest_version": 2,
+  "browser_action": {
+    "default_popup": "hello.html",
+    "default_icon": "//cdn.shopify.com/s/files/1/1061/1924/products/Tears_Emoji_Icon_2.png?v=1485573515"
+  },
+  "commands": {
+    "_execute_browser_action": {
+      "suggested_key": {
+        "default": "Ctrl+T",
+        "mac": "MacCtrl+T"
+      },
+      "description": "Opens hello.html"
+    }
+  }
+}
