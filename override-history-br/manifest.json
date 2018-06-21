@@ -1,0 +1,16 @@
+{
+  "name": "override history",
+  "description" : "Overrides the History Page",
+  "version": "1.0",
+  "manifest_version": 2,
+  "chrome_url_overrides": {
+    "history": "history.html"
+  },
+  "browser_action": {
+    "default_title": "History"
+  },
+  "permissions": [
+    "history",
+    "chrome://favicon/"
+  ]
+}
