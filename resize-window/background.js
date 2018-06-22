@@ -1,14 +1,3 @@
-//chrome.windows.getCurrent(function(wind) {
-//    alert(wind.id);
-//    var maxWidth = window.screen.availWidth;
-//    var maxHeight = window.screen.availHeight;
-//    var updateInfo = {
-//        left: 0,
-//        top: 0,
-//        width: 300,
-//        height: 300
-//    };
-//    chrome.windows.update(wind.id, updateInfo);});
 var maxWidth = window.screen.availWidth;
 var maxHeight = window.screen.availHeight;
 var halfLeft = {
@@ -25,22 +14,16 @@ var halfRight = {
     height:  maxHeight
 };
 
-chrome.tabs.query({active: true}, function(tabs){
-    //chrome.tabs.move(tabs[0].id, {index: -1, windowId: 2}, function(){
-    //
-    //})
+document.getElementById('two').addEventListener('click', function(){
+  chrome.tabs.query({active: true, currentWindow: true}, function(tabs){
+      chrome.windows.update(tabs[0].windowId, halfLeft);
 
-    console.log(tabs)
-    chrome.windows.update(tabs[0].windowId, halfLeft);
+      chrome.windows.create({tabId: tabs[0].id}, function(win){
+          chrome.windows.update(win.id, halfRight);
+      })
 
-    chrome.windows.create({tabId: tabs[0].id}, function(win){
-        chrome.windows.update(win.id, halfRight);
-    })
-
-});
-
-//chrome.tabs.getCurrent(function(tab){
-//    console.log(tab)
-//})
-
-//chrome.tabs.create({windowId: 2})
+  });
+})
+chrome.windows.onCreated.addListener(function (win) {
+  chrome.windows.update(win.id, halfRight);
+})
